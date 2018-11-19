@@ -1,0 +1,4 @@
+* AI to identify and rename pics
+* CUE sheet generator
+* sample rate converter
+* check for different sample rates when joining (wav_tracks += ({'audio_data': audio_data, 'sample_rate': sample_rate},))
