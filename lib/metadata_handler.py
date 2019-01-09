@@ -1,25 +1,19 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-def set_reader(format):
+def set_format(format):
     if format == 'flac':
-        from mutagen.flac import FLAC
-        codec = FLAC
+        from mutagen.flac import FLAC as codec
     elif format == 'ape':
-        from mutagen.monkeysaudio import MonkeysAudio as APE
-        codec = APE
+        from mutagen.monkeysaudio import MonkeysAudio as codec
     elif format == 'm4a':
-        from mutagen.easymp4 import EasyMP4 as ALAC
-        codec = ALAC
+        from mutagen.easymp4 import EasyMP4 as codec
 
     return codec
 
 def read_metadata(path, file_name, format):
-    codec = set_reader(format)
+    codec = set_format(format)
 
     return codec(path + file_name + '.' + format)
 
-#     print(metadata['title'])
-#
-# print(read_metadata('/media/data/music/audiofile-tools-testdir/', 'test2', 'ape'))
-
+# read_metadata('/media/storage/music/audiofile-tools-testdir/', 'test', 'flac')

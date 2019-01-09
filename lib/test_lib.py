@@ -5,7 +5,7 @@ import glob
 import subprocess
 
 
-# chdir('/media/data/music/Genesis-1977-Spot_The_Pigeon/test')
+# chdir('/media/storage/music/Genesis-1977-Spot_The_Pigeon/test')
 
 # track_converter('wav')
 
@@ -69,7 +69,7 @@ import subprocess
 # from metadata_handler import read_metadata
 # from os import remove
 
-# tracks_path = '/media/data/music/audiofile-tools-testdir/'
+# tracks_path = '/media/storage/music/audiofile-tools-testdir/'
 
 # track_list = track_scanner(tracks_path)
 #

@@ -4,8 +4,9 @@
 from os import scandir
 from metadata_handler import read_metadata
 
-def track_scanner(path):
+def scan_tracks(path):
     track_list = []
+
     for file in scandir(path):
         if file.name.endswith(('.ape', '.flac', '.m4a')):
             # tracks += track.name.replace(' ', '\ ') + ' '
@@ -24,8 +25,6 @@ def track_scanner(path):
             }
             track_list.append(track)
 
-    # for track in tracks:
-    #     print(track['title'] + '     ' + track['format'])
     return track_list
 
-print(track_scanner('/media/data/music/audiofile-tools-testdir/'))
+print(scan_tracks('/media/storage/music/audiofile-tools-testdir/'))
