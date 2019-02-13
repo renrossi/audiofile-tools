@@ -63,25 +63,25 @@ import subprocess
 
 
 
-# from scan import track_scanner
-# from convert import single_track_converter, multi_track_converter
-# from join import track_joiner
-# from metadata_handler import read_metadata
-# from os import remove
+import track_scanner
+import track_converter
+from join import track_joiner
+from metadata_handler import read_metadata
+from os import remove
 
-# tracks_path = '/media/storage/music/audiofile-tools-testdir/'
+tracks_path = '/media/storage/music/audiofile-tools-testdir/'
 
-# track_list = track_scanner(tracks_path)
-#
-# multi_track_converter(tracks_path, './tmp/', track_list, 'wav')
-#
-# track_joiner(track_list)
-#
-# try:
-#     single_track_converter('./tmp/', tracks_path, {'title': 'output', 'format': '.wav'}, 'flac')
-# except:
-#     print('error')
-# else:
-#     remove('./tmp/output.wav')
+track_list = track_scanner(tracks_path)
 
-# read_metadata('flac', tracks_path, 'output.flac')
+multi_track_converter(tracks_path, './tmp/', track_list, 'wav')
+
+track_joiner(track_list)
+
+try:
+    single_track_converter('./tmp/', tracks_path, {'title': 'output', 'format': '.wav'}, 'flac')
+except:
+    print('error')
+else:
+    remove('./tmp/output.wav')
+
+read_metadata('flac', tracks_path, 'output.flac')

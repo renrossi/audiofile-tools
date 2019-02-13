@@ -1,14 +1,16 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-from os import scandir
-from metadata_handler import read_metadata
+import os
+
+from . import metadata_handler
+
 
 def scan_tracks(path):
 
     track_list = []
 
-    for file in scandir(path):
+    for file in os.scandir(path):
 
         if file.name.endswith(('.ape', '.flac', '.m4a')):
 
@@ -16,7 +18,7 @@ def scan_tracks(path):
 
             audio_file = file.name.split('.')
 
-            metadata = read_metadata(path, audio_file[0], audio_file[1])
+            metadata = metadata_handler.read_metadata(path, audio_file[0], audio_file[1])
 
             track = {
                 'track_file': {
