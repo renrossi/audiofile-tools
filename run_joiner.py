@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
+import os
+
 from lib import track_scanner,\
                 track_converter,\
                 track_joiner, \
                 metadata_handler
-
-import os
 
 
 if __name__ == '__main__':

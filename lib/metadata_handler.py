@@ -23,6 +23,3 @@ def read_metadata(path, file_name, format):
     codec = set_format(format)
 
     return codec(path + file_name + '.' + format)
-
-# read_metadata('/media/storage/music/audiofile-tools-testdir/', 'test', 'flac')
-

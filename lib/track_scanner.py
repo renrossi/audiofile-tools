@@ -14,8 +14,6 @@ def scan_tracks(path):
 
         if file.name.endswith(('.ape', '.flac', '.m4a')):
 
-            # tracks += track.name.replace(' ', '\ ') + ' '
-
             audio_file = file.name.split('.')
 
             metadata = metadata_handler.read_metadata(path, audio_file[0], audio_file[1])
@@ -35,7 +33,3 @@ def scan_tracks(path):
             track_list.append(track)
 
     return track_list
-
-
-print(scan_tracks('/media/storage/music/audiofile-tools-testdir/'))
-

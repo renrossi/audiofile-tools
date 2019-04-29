@@ -5,6 +5,7 @@ from scipy.io import wavfile
 from numpy import concatenate
 from os import remove
 
+
 def join_tracks(track_list):
 
     wav_tracks = ()
@@ -31,4 +32,3 @@ def join_tracks(track_list):
         for track in track_list:
 
             remove('./tmp/' + track['title'] + '.wav')
-
